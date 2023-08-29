@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+%\usepackage{algorithm}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{float, fullpage, graphicx, multirow,parskip, subcaption, setspace}
+\usepackage{url}
+
+
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{placeins}
+
+\usepackage{geometry}
+
+\usepackage{lineno}
+\linenumbers
+\geometry{verbose,letterpaper,tmargin=2.54cm,bmargin=2.54cm,lmargin=2.54cm,rmargin=2.54cm}
+\usepackage{rotating}
+\usepackage{booktabs} 
+\usepackage{longtable}
+\usepackage{tabularx,colortbl}
+
+\def\keywordname{{\bfseries \emph Keywords}}%
+\def\keywords#1{\par\addvspace\medskipamount{\rightskip=0pt plus1cm
+		\def\and{\ifhmode\unskip\nobreak\fi\ $\cdot$
+		}\noindent\keywordname\enspace\ignorespaces#1\par}}
+
+
+
+
+\pagestyle{plain}
+\fancyhf{}
+\cfoot{\thepage}
+
+%\lhead{Submitted to: \textit{Ecology} \\
+%Type: Article}
+%\rhead{Statistical report}
+
+
+
+\hypersetup{pdfborder = {0 0 0.5 [3 3]}, colorlinks = true, linkcolor = BrightRed, citecolor = SkyBlue}
+
+\bibliographystyle{apalike}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\numbereqn}{\addtocounter{equation}{1}\tag{\theequation}} % use \numberthis to add number in align* mode
+
+
+
+
+
+
+\title{A Great Paper}
+
+\author{You$^{1 *}$ \and Great Coauthors$^2$ }
+
+\date{
+\small $^1$ Laboratory for Great Studies, University of Good Stuff.\\
+$^{2}$ Department of Good Researchers, Awesome University.\\
+$^*$ Corresponding author: you@UGreat.edu
+%\today
+}
+
+\begin{document}
+\begin{spacing}{2}
+
+
+
+Submitted to: \textit{Ecology} \\
+Manuscript type: Article
+{\let\newpage\relax\maketitle}
+\begin{flushleft}
+
+
+\textbf{Open Research statement:} Upon acceptance, the relevant data and code will be provided via some good place. 
+
+\keywords{Some keywords \and Other keywrods}
+
+\newpage
+\begin{abstract}
+    \input{tex/abstract}
+\end{abstract}
+
+
+
+%\newpage
+\section{Introduction}
+\label{sec:introduction}
+\input{tex/intro}
+
+\section{Methods}
+\label{sec:method}
+\input{tex/method}
+
+
+\section{Results}
+\label{sec:results}
+\input{tex/results}
+
+\section{Discussion}
+\label{sec:discussion}
+\input{tex/discussion}
+
+\section*{Acknowledgement}
+\input{tex/acknowledgement}
+
+\FloatBarrier
+%\small
+\bibliography{references.bib}
+
+\newpage
+\FloatBarrier
+\section*{Appendix}
+\appendix
+\renewcommand{\theequation}{A\arabic{equation}}
+\renewcommand{\thesection}{A\arabic{section}}  
+\renewcommand{\thefigure}{A\arabic{figure}}  
+\renewcommand{\thesubsection}{A\arabic{subsection}} 
+\renewcommand{\thesubsubsection}{A\arabic{subsubsection}} 
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\label{sec:appendix}
+\input{tex/appendix.tex}
+
+\end{flushleft}
+\end{spacing}
+\end{document}
